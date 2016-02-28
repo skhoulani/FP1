@@ -28,6 +28,11 @@ For example, maybe you are interested in retrieving data from the web. If we loo
 Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
 This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
 
+### The following libraries are not allowed:
+* games/cards
+* racket/gui
+* racket/draw 
+
 #Part 3: Write your Report
 Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
 
@@ -57,7 +62,7 @@ Remember that this report must include:
 * output from your code demonstrating what it produced
 * any diagrams or figures explaining your work
 
-The narrative itself should be no longer than 350 words. Yes, you can add more files and link or refer to them. This is github, handling files is awesome and easy!
+The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). That image must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
 
 Ask questions publicly in the email group.
 
