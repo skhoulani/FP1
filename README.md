@@ -62,9 +62,14 @@ Remember that this report must include:
 * a narrative of what you did
 * the code that you wrote
 * output from your code demonstrating what it produced
-* any diagrams or figures explaining your work
+* at least one diagram or figure showing your work
 
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). That image must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
+The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
+
+Code should be delivered in two ways:
+
+1. Full files should be added to your version of this repository.
+1. Key excerpts of your code should be copied into this .md file, set off with the markdown that makes it look like code, and explained.
 
 Ask questions publicly in the email group.
 
