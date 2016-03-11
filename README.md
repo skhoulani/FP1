@@ -1,41 +1,5 @@
 # Final Project Assignment 1: Exploration (FP1)
 DUE Friday, March 11, 2016
- 
-Your job is to explore one library and write up your results. Load the library and write some code to drive it around.
-For example, maybe you are interested in retrieving data from the web. If we look at the net/url library, we will find functions for creating URLs, issuing HTTP GET commands, and displaying the results. Here is a little bit of code for driving around a few of the functions in this library:
-```racket
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
-Notice that `(require net/url)` is all you need to put in your buffer in order to load the library and start using it.
-This above is a trivial example; to complete this for the purposes of this assignment (if you go down the path of pulling HTTP requests), you should use the parsing libraries to parse the HTML, JSON, or XML that is returned.
-
-
-
-#Part 3: Write your Report
-Write your report right in this file. Instructions are below. Delete the instructions when you are done. Also delete all my explanation (this stuff), as I've already read it.
-
-You are allowed to change/delete anything in this file to make it into your report. It will be public, FYI.
-
-This file is formatted with the [**markdown** language][markdown], so take a glance at how that works.
-
-This file IS your report for the assignment, including code and your story.
-
-Code is super easy in markdown, which you can easily do inline `(require net/url)` or do in whole blocks:
-```
-#lang racket
-
-(require net/url)
-
-(define myurl (string->url "http://www.cs.uml.edu/"))
-(define myport (get-pure-port myurl))
-(display-pure-port myport)
-```
 
 ## My Library: graphics/turtles
 My name: Samir Khoulani
@@ -68,7 +32,7 @@ To begin my project exploration, I looked into the turtle library, as it appeale
 (turn 90)
 (draw n)
  ```
- <b>Fig. 1</b>
+ <b>Figure 1.</b><i> Code for both a square and equilateral triangle.</i>
 
 
 Because there was not much information I could find outlining recursion with turtles, this took a while. Seen in <b>Fig. 2</b>, my first attempt at recursing used <i>draw-offset</i> and a base case of a null list (I wasn't sure what it should be) which turned out to be completely innefective. 
@@ -88,11 +52,14 @@ Because there was not much information I could find outlining recursion with tur
 (split (turn 0))
 (recursive-call (* 0.5 n))
  ```
- <b>Fig. 2</b>
+ <b>Figure 2.</b><i> My first attempt at creating code to be used in the recursive function.</i>
 
 The more effective method, however, proved to involve using <i>draw</i> instead. After a significantly large portion of testing I realized that the function <i>home</i>, which just resets the turtle's position, might be perfect for a base case. Realizing that this would work, and I wouldn't get an error or and endless loop, I then took the code for the equilateral triangle I made from <b>Fig. 1</b> and started experimenting.
 
 My first goal was to make triangles bigger and bigger from the center, but I realized that I wanted to do something with more than one triangle recursing instead. After pasting the code for my triangle three more times, I used the turn function to rotate the triangle in a way such that after each triangle was placed, the next one would be placed 90 degrees clockwise. <b>Fig. 3</b> shows the code for the four triangles that would be placed every recursive call. The result would create a Knights' Templaresque design shown in <Fig. 4</b>, with triangles recursing within eachother.
+
+![FP1 Image Output](https://github.com/skhoulani/FP1/blob/master/FP1output.png)
+<b>Figure 4.</b> <i> The resulting out put of my code.</i>
 
 
 Write what you did!
