@@ -37,8 +37,63 @@ Code is super easy in markdown, which you can easily do inline `(require net/url
 (display-pure-port myport)
 ```
 
-## My Library: (library name here)
-My name:
+## My Library: graphics/turtles
+My name: Samir Khoulani
+
+
+To begin my project exploration, I looked into the turtle library, as it appealed to me the most. This library was pretty interesting as it involved moving the "turtle" around, which could be used to trace where it has been. The main functions learned were <i>draw, turn, erase, draw-offset</i>, and <i>home</i>. After I got these down, and experiented with shape construction shown in <b>Fig. 1</b>, I began to look into recursion.
+
+
+```racket
+;square with draw-offset
+(draw-offset 0 100)
+(draw-offset 100 0)
+(draw-offset 0 -100)
+(draw-offset -100 0)
+
+;Equilateral triangle
+(turn 30) 
+(draw n)
+(turn 120)
+(draw n)
+(turn 120)
+(draw n)
+
+;Square
+(draw n)
+(turn 90)
+(draw n)
+(turn 90)
+(draw n)
+(turn 90)
+(draw n)
+ ```
+ <b>Fig. 1</b>
+
+
+Because there was not much information I could find outlining recursion with turtles, this took a while. Seen in <b>Fig. 2</b>, my first attempt at recursing used <i>draw-offset</i> and a base case of a null list (I wasn't sure what it should be) which turned out to be completely innefective. 
+
+```racket
+(draw-offset n n)
+(draw-offset (* -1 2 n) 0)
+(draw-offset n (* -1 n))
+(draw-offset (* 0.5 n) (* 0.5 n))
+(draw-offset (* -1 n) 0)
+(draw-offset (* 0.5 n) (* 0.5 n))
+(draw-offset (* 0.5 n) (* 0.5 -1 n))
+(draw-offset (* 0.5 -1 n) (* 0.5 -1 n))
+(draw-offset n n)
+(draw-offset (* -1 2 n) 0)
+(draw-offset n (* -1 n))
+(split (turn 0))
+(recursive-call (* 0.5 n))
+ ```
+ <b>Fig. 2</b>
+
+The more effective method, however, proved to involve using <i>draw</i> instead. After a significantly large portion of testing I realized that the function <i>home</i>, which just resets the turtle's position, might be perfect for a base case. Realizing that this would work, and I wouldn't get an error or and endless loop, I then took the code for the equilateral triangle I made from <b>Fig. 1</b> and started experimenting.
+
+My first goal was to make triangles bigger and bigger from the center, but I realized that I wanted to do something with more than one triangle recursing instead. After pasting the code for my triangle three more times, I used the turn function to rotate the triangle in a way such that after each triangle was placed, the next one would be placed 90 degrees clockwise. <b>Fig. 3</b> shows the code for the four triangles that would be placed every recursive call. The result would create a Knights' Templaresque design shown in <Fig. 4</b>, with triangles recursing within eachother.
+
 
 Write what you did!
 Remember that this report must include:
