@@ -56,28 +56,49 @@ Because there was not much information I could find outlining recursion with tur
 
 The more effective method, however, proved to involve using <i>draw</i> instead. After a significantly large portion of testing I realized that the function <i>home</i>, which just resets the turtle's position, might be perfect for a base case. Realizing that this would work, and I wouldn't get an error or and endless loop, I then took the code for the equilateral triangle I made from <b>Fig. 1</b> and started experimenting.
 
-My first goal was to make triangles bigger and bigger from the center, but I realized that I wanted to do something with more than one triangle recursing instead. After pasting the code for my triangle three more times, I used the turn function to rotate the triangle in a way such that after each triangle was placed, the next one would be placed 90 degrees clockwise. <b>Fig. 3</b> shows the code for the four triangles that would be placed every recursive call. The result would create a Knights' Templaresque design shown in <Fig. 4</b>, with triangles recursing within eachother.
+My first goal was to make triangles bigger and bigger from the center, but I realized that I wanted to do something with more than one triangle recursing instead. After pasting the code for my triangle three more times, I used the turn function to rotate the triangle in a way such that after each triangle was placed, the next one would be placed 90 degrees clockwise. <b>Fig. 3</b> shows the code for `(shape-r side)`, which takes a pixel length, and increases it by a factor of 0.9 after each recursive call. The resulting four triangles create a Knights' Templaresque design shown in <b>Fig. 4</b>, with triangles recursing within eachother.
+
+```racket
+(define (shape-r side)
+    (if (< side 10)  (home) ;base case
+      (let ((n (* 0.9 side)))
+        (home)
+        (turn 60) ;equilateral triangle
+        (draw n)
+        (turn 120)
+        (draw n)
+        (turn 120)
+        (draw n)
+        
+        (turn 30) ;equilateral triangle
+        (draw n)
+        (turn 120)
+        (draw n)
+        (turn 120)
+        (draw n)
+        
+        (turn 30) ;equilateral triangle
+        (draw n)
+        (turn 120)
+        (draw n)
+        (turn 120)
+        (draw n)
+        
+        (turn 30) ;equilateral triangle
+        (draw n)
+        (turn 120)
+        (draw n)
+        (turn 120)
+        (draw n)
+        
+        (shape-r n) ;recurse
+       )))
+```
+<b>Figure 3.</b> <i> The recursive function `(shape-r side)`.</i>
 
 ![FP1 Image Output](https://github.com/skhoulani/FP1/blob/master/FP1output.png)
-<b>Figure 4.</b> <i> The resulting out put of my code.</i>
+<b>Figure 4.</b> <i> The resulting output of `(shape-r 500)`.</i>
 
-
-Write what you did!
-Remember that this report must include:
-
-* a narrative of what you did
-* highlights of code that you wrote, with explanation
-* output from your code demonstrating what it produced
-* at least one diagram or figure showing your work
-
-The narrative itself should be no longer than 350 words. Yes, you need at least one image (output, diagrams). Images must be embedded into this md file. We should not have to click a link to see it. This is github, handling files is awesome and easy!
-
-Code should be delivered in two ways:
-
-1. Full files should be added to your version of this repository.
-1. Key excerpts of your code should be copied into this .md file, formatted to look like code, and explained.
-
-Ask questions publicly in the email group.
 
 ## How to Prepare and Submit this assignment
 
