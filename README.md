@@ -99,19 +99,6 @@ My first goal was to make triangles bigger and bigger from the center, but I rea
 ![FP1 Image Output](https://github.com/skhoulani/FP1/blob/master/FP1output.png)
 <b>Figure 4.</b> <i> The resulting output of `(shape-r 500)`.</i>
 
-
-## How to Prepare and Submit this assignment
-
-1. To start, [**fork** this repository][forking]. 
-  2. (This assignment is just one README.md file, so you can edit it right in github)
-1. Modify the README.md file and [**commit**][ref-commit] changes to complete your report.
-1. Add your racket file to the repository. 
-1. Ensure your changes (report in md file, and added rkt file) are committed to your forked repository.
-1. [Create a **pull request**][pull-request] on the original repository to turn in the assignment.
-
-## Project Schedule
-This is the first part of a larger project. The final project schedule is [here][schedule]
-
 <!-- Links -->
 [schedule]: https://github.com/oplS16projects/FP-Schedule
 [markdown]: https://help.github.com/articles/markdown-basics/
